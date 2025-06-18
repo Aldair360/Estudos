@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt">
+    <head>
+        <title>Portifólio</title>
+        <meta name="description" content="Texto gigante">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Abel|Poiret+One" rel="stylesheet">
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+    </head>
+    <body class="body_titulos">
+        <header class="intro">
+            <div class="container">
+                <h1 class="intro__titulo"> 
+                    Oi!<br/> 
+                    Sou <strong class="intro__verde">BÁRBARA</strong>,<br/>
+                    uma <strong class="intro__rosa">DESIGNER</strong> criativa<br/>
+                    e <strong class="intro__azul">SEM LIMITES</strong>.
+                </h1>
+                <nav>
+                    <ol class="menu">
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#trabalhos">Trabalhos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ol>
+                </nav>    
+            </div>    
+        </header>
+        
+        
+        <section id="sobre" class="sobre">
+            <div class="container">
+                
+                <h1 class="titulo_secao">Sobre</h1>
+                
+                <div class="texto">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales diam lacus, at consequat velit vehicula vitae. Duis ut ante nec nisl fermentum dapibus pulvinar sit amet nisi.
+                    </p>
+
+                    <p>
+                        Fusce finibus lacus et hendrerit ornare. Proin consectetur libero orci, eget eleifend sapien mollis viverra. Nam ut maximus turpis, vitae commodo tellus. Sed est eros, volutpat eget molestie mattis, faucibus ut risus.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="trabalhos" class="trabalhos">
+            <div class="container">
+                
+                <h1 class="titulo_secao">Trabalhos</h1>
+                    <div class="galeria">
+                        <a data-fancybox="gallery" href="imagens/trabalho01grande.jpg"><img src="imagens/trabalho01.jpg"></a>
+                        <a data-fancybox="gallery" href="imagens/trabalho02grande.jpg" ><img src="imagens/trabalho02.jpg"></a>
+                        <a data-fancybox="gallery" href="imagens/trabalho02grande.jpg" ><img src="imagens/trabalho03.jpg"></a>
+                    </div>    
+               
+            </div>
+        </section>
+        
+        <footer id="contato" class="contato">
+            <div class="container">
+                
+                <h1 class="titulo_secao">Entre em Contato</h1>
+                    <div class="texto">
+                        <p>
+                            <a href="mailto:lemos.anjos@gmail.com">lemos.anjos@gmail.com</a>
+                        </p>    
+                            <div class="redes">
+                                <a href="http://www.facebook.com" target="_blank"><img src="imagens/facebook.png"></a>
+                                <a href="http://www.twitter.com" target="_blank"><img src="imagens/twitter.png"></a>
+                                <a href="http://www.linkedin.com" target="_blank" ><img src="imagens/linkedin.png"></a>
+                            </div>       
+                       
+                    </div>    
+               
+            </div>
+        </footer>
+        
+        <script>
+            $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+        </script>
+        
+    </body>
+    
+</html>
